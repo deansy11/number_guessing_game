@@ -1,5 +1,5 @@
 # this generates a random number between 1 and 100 (including 100, because it uses '..' instead of '...')
-randNum = rand(1..100)
+rand_num = rand(1..100)
 
 # this allows you to receive input from a user
 print "Pick a random number Between 1 and 100. Please put your guess here:"
@@ -8,7 +8,10 @@ print "Pick a random number Between 1 and 100. Please put your guess here:"
 here = gets.chomp.to_i
 
 # creates an if statement to check if user number = computer random number
-if here == randNum
+if here == rand_num
   puts "Nailed it!"
-else
-  puts "Whoops. Try again."
+elseif here < rand_num
+  puts "Whoops. Too low. Try again."
+else here > rand_num
+  puts "Too high! Please try again."
+end
