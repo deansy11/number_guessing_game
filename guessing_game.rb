@@ -1,10 +1,20 @@
 rand_num = rand(1..100)
 counter = 0
+guesses = []
 
 while counter < 5
 print "Pick a random number Between 1 and 100. Please put your guess here:"
 
 here = gets.chomp.to_i
+  if guesses.include? here
+    puts "Whoops. You've already guessed that. Please try again!"
+
+    print "Pick a random number Between 1 and 100. Please put your guess here:"
+
+    here = gets.chomp.to_i
+  end
+    guesses.push here
+    p guesses
 
   if here == rand_num
     puts "Nailed it!"
