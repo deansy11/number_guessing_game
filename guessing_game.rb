@@ -3,29 +3,32 @@ counter = 0
 guesses = []
 
 while counter < 5
-print "Pick a random number Between 1 and 100. Please put your guess here:"
+  print "Pick a random number Between 1 and 100. Please put your guess here:"
 
-here = gets.chomp.to_i
-  if guesses.include? here
-    puts "Whoops. You've already guessed that. Please try again!"
+  here = gets.chomp.to_i
 
-    print "Pick a random number Between 1 and 100. Please put your guess here:"
+    if guesses.include? here
+      puts "Whoops. You've already guessed that. Please try again!"
 
-    here = gets.chomp.to_i
-  end
-    guesses.push here
-    p guesses
+      print "Pick a random number Between 1 and 100. Please put your guess here:"
 
-  if here == rand_num
-    puts "Nailed it!"
-    exit
-  elsif here < rand_num
-    puts "Whoops. Too low. Try again."
-    counter += 1
+      here = gets.chomp.to_i
+    end
 
-  else here > rand_num
-    puts "Too high! Please try again."
-    counter += 1
-  end
+      guesses.push here
+      p guesses
 
+    if here == rand_num
+      puts "Nailed it!"
+      exit
+
+    elsif here < rand_num
+      puts "Whoops. Too low. Try again."
+      counter += 1
+
+    else here > rand_num
+      puts "Too high! Please try again."
+      counter += 1
+    end
 end
+puts "Sorry, you lose. The number was #{rand_num}"
