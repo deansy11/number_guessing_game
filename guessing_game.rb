@@ -5,14 +5,17 @@ guesses = []
 while counter < 5
   print "Pick a random number Between 1 and 100. Please put your guess here:"
 
-  here = gets.chomp.to_i
+  def player_guess
+    gets.chomp.to_i
+  end
+  here = player_guess
 
     if guesses.include? here
       puts "Whoops. You've already guessed that. Please try again!"
 
       print "Pick a random number Between 1 and 100. Please put your guess here:"
 
-      here = gets.chomp.to_i
+      here
     end
 
       guesses.push here
