@@ -1,9 +1,12 @@
 rand_num = rand(1..100)
 counter = 0
 guesses = []
+def input_prompt
+  "Pick a random number Between 1 and 100. Please put your guess here: "
+end
 
 while counter < 5
-  print "Pick a random number Between 1 and 100. Please put your guess here:"
+  print input_prompt
 
   def player_guess
     gets.chomp.to_i
@@ -13,7 +16,7 @@ while counter < 5
     if guesses.include? here
       puts "Whoops. You've already guessed that. Please try again!"
 
-      print "Pick a random number Between 1 and 100. Please put your guess here:"
+      print input_prompt
 
       here
     end
